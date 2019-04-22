@@ -28,4 +28,13 @@ public class WelcomerServiceTest {
         .isEqualTo("Hi The Kid, welcome to Kid Money Manager. You can use the commands: BALANCE and GOALS.");
   }
 
+    @Test
+      public void messageForUnknownUser() throws Exception {
+        WelcomerService welcomerService = new WelcomerService(null, null);
+
+        UserProfile userProfile = new UserProfile("User That Does Not Exist", null, null, null);
+        // let's say this shouldn't throw an exception if the user does not exist. (?)
+        welcomerService.welcome(1234L);
+    }
+
 }
