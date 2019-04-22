@@ -30,9 +30,10 @@ public class WelcomerServiceTest {
 
     @Test
       public void messageForUnknownUser() throws Exception {
-        WelcomerService welcomerService = new WelcomerService(null, null);
+        UserProfileRepository profileRepository = new FakeUserProfileRepository(null);
+        WelcomerService welcomerService = new WelcomerService(null, profileRepository);
 
-        UserProfile userProfile = new UserProfile("User That Does Not Exist", null, null, null);
+        UserProfile userProfile = new UserProfile("User That Does Not Exist", null, null, Role.PARENT);
         // let's say this shouldn't throw an exception if the user does not exist. (?)
         welcomerService.welcome(1234L);
     }
