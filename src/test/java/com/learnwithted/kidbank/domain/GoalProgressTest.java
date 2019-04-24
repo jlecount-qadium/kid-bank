@@ -6,7 +6,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class GoalProgressTest {
 
-  /*
   @Test
   public void noProgressMadeIsZeroPercentProgress() throws Exception {
     Goal goal = new Goal("goal", 100);
@@ -96,6 +95,5 @@ public class GoalProgressTest {
     assertThat(remaining)
         .isZero();
   }
-  */
 
 }
